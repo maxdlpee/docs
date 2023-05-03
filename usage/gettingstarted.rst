@@ -5,7 +5,7 @@ Here are the basic steps to help you get started with 86Box. The user interface 
 
 .. rubric:: Step 1: Get the ROM set
 
-86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by extension cards. If you try to start 86Box without one, you'll receive an error and 86Box will close. You need to download the ROM set from `here <https://github.com/86Box/roms/releases/latest>`_, and extract it into one of the :doc:`supported locations <roms>`.
+86Box relies on a set of ROM dumps gathered from physical hardware to emulate it. This includes the system BIOS, as well as any option ROMs used by expansion cards. If you try to start 86Box without one, you'll receive an error and 86Box will close. You need to download the ROM set from `here <https://github.com/86Box/roms/releases/latest>`_, and extract it into one of the :doc:`supported locations <roms>`.
 
 .. rubric:: Step 2: Meet the main window
 
@@ -41,6 +41,8 @@ To release the mouse, press :kbd:`F8 + F12` simultaneously (on Windows) or :kbd:
 
 If you made it this far, you got the basics of using 86Box, but there's more features and options to explore. For example, you can try out `86Box Manager <https://github.com/86Box/86BoxManager>`_ for easier management of multiple emulated machines. You can see what's under the *View* menu, or look at some of the more obscure options in the *Settings* window.
 
-Keep in mind that because 86Box is constantly in development, various problems will come and go. If you think something's not working the way it should, consider submitting an issue here on GitHub or joining official support channels on Discord or IRC.
+You may eventually encounter the need to get files *into* your machine. Please see :ref:`this section for information on disk image formats<hardware/diskimages:Disk images>` and :ref:`this section on creating and using disk images<hardware/diskimages:Creating and using disk images>`.
+
+Keep in mind that because 86Box is constantly in development, various problems will come and go. If you think something's not working the way it should, consider `submitting an issue on GitHub <https://github.com/86Box/86Box/issues>`_ or joining official support channels on Discord or IRC.
 
 Have fun!

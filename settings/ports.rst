@@ -33,9 +33,9 @@ Emulated device to connect to the given parallel (LPT) port.
 
 * **PLIP Network:** A `Parallel Line Internet Protocol <https://en.wikipedia.org/wiki/Parallel_Line_Internet_Protocol>`_ cable connected to the :doc:`emulated network <network>`.
 
-   * The :ref:`emulated network adapter <settings/network:Network adapter>` must also be set to **[LPT] PLIP**.
+   * The :ref:`emulated network adapter <settings/network:Adapter>` must also be set to **[LPT] PLIP**.
    * PLIP is compatible with the DOS ``plip.com`` packet driver and the Linux ``plip`` driver (only with interrupts enabled). It is not compatible with the Windows *Direct Cable Connection* feature or any other parallel port networking implementations.
-   * PLIP works best with the **SLiRP** :ref:`network type <settings/network:Network type>` due to its point-to-point nature.
+   * PLIP works best with the **SLiRP** :ref:`network type <settings/network:Mode>` due to its point-to-point nature.
 
 Serial port 1-4
 ---------------
@@ -45,6 +45,6 @@ Enable emulation of serial ports ranging from COM1 to COM4. Any ports not provid
 Parallel port 1-4
 -----------------
 
-Enable emulation of parallel ports ranging from LPT1 to LPT3. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
+Enable emulation of parallel ports ranging from LPT1 to LPT4. Any ports not provided by the machine's motherboard will be emulated as generic ISA or VLB parallel cards.
 
 .. note:: The 4th parallel port is not widely supported. It is located at I/O port 268h.

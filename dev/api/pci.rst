@@ -19,8 +19,6 @@ PCI devices can be added with the ``pci_add_card`` function in the device's ``in
         #include <86box/device.h>
         #include <86box/pci.h>
 
-        #define FOO_ONBOARD 0x80000000  /* most significant bit set = on-board */
-
         typedef struct {
             int     slot;
             uint8_t pci_regs[256]; /* 256*8-bit configuration register array */
@@ -321,7 +319,7 @@ The ``func`` parameter passed to a device's configuration space read/write callb
 
             /* Reset PCI configuration registers. */
             memset(dev->pci_regs[0], 0, sizeof(dev->pci_regs[0]));
-            memset(dev->pci_regs[0], 0, sizeof(dev->pci_regs[0]));
+            memset(dev->pci_regs[1], 0, sizeof(dev->pci_regs[1]));
 
             /* Write default vendor IDs, device IDs, etc. */
 

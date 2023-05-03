@@ -13,7 +13,7 @@ Toolchain files
 
 Toolchain files are contained in the ``cmake`` directory. They define compiler flags and the 86Box-specific ``Release``, ``Debug`` and ``Optimized`` build types.
 
-It is not required to required to use the included toolchain files, but it is highly recommended to make sure your build is compiled with the same configuration as used by the rest of the team and our userbase.
+It is not required to use the included toolchain files, but it is highly recommended to make sure your build is compiled with the same configuration as used by the rest of the team and our userbase.
 
 The currently included files are:
 
@@ -122,7 +122,17 @@ Ubuntu, Debian
 
 .. code-block:: bash
 
-    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev
+    $ sudo apt install build-essential cmake extra-cmake-modules pkg-config ninja-build libfreetype-dev libsdl2-dev libpng-dev libopenal-dev librtmidi-dev libfaudio-dev qtbase5-dev qtbase5-private-dev qttools5-dev libevdev-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+
+Arch
+""""
+
+.. code-block:: bash
+  
+    $ sudo pacman -Sy base-devel cmake extra-cmake-modules pkg-config ninja libfreetype sdl2 libpng lib32-openal rtmidi faudio qt5-base qt5-xcb-private-headers qt5-tools libevdev libxkbcommon libxkbcommon-x11 vulkan-devel
+
+.. note:: Make sure to enable the multilib repository in your ``pacman.conf`` file.
 
 
 macOS (Homebrew)

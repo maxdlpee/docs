@@ -10,6 +10,7 @@ Action
 
 * **Keyboard requires capture:** require the mouse to be captured for keypresses to be forwarded to the emulated machine. Enabling this option allows the use of keyboard combinations (such as Alt+Tab) on the host system while 86Box is focused.
 * **Right CTRL is left ALT:** let the right Ctrl key act as a left Alt key, to simulate some special keyboards where the Alt key is located on the right side of the space bar.
+* **Tablet tool:** select the pointing tool to use on the :ref:`drawing tablet <settings/input:Mouse>`. This option will only be available when emulating a tablet.
 * **Hard Reset:** force a reset of the emulated machine. Requires confirmation, which can be disabled by checking the *Don't show this message again* box.
 * **Ctrl+Alt+Del:** send a *Ctrl+Alt+Del* key combination to the emulated machine. You can alternatively press *Ctrl+F12* to send that combination.
 * **Ctrl+Alt+Esc:** send a *Ctrl+Alt+Esc* key combination to the emulated machine.
@@ -19,14 +20,15 @@ Action
 View
 ----
 
-* **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
 * **Hide toolbar:** hides the :doc:`toolbar <toolbar>` below the menu bar.
+* **Hide status bar:** hides the :doc:`status bar <statusbar>` at the bottom of the window.
+* **Show non-primary monitors:** shows or hides the secondary display window if a :ref:`secondary video card <settings/display:Video #2>` is configured.
 * **Resizeable window:** allow the 86Box window to be freely resized. Unchecking this option will also return the window to its normal size.
 * **Remember size & position:** automatically save the size and position of the 86Box window to the emulated machine's configuration file.
 * **Renderer:** select a graphical renderer for the emulated display.
 
-   * **SDL (Hardware)** is recommended in most cases.
-   * **SDL (Software)**, **SDL (OpenGL)** and **Vulkan** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed.
+   * **Qt (Software)** is recommended in most cases.
+   * **Qt (OpenGL)**, **Vulkan** and **Direct3D 9** are known to perform better on some host systems. Try these if your system is struggling to maintain 100% emulation speed. *Vulkan* may not be available if the host GPU is not Vulkan-capable, and *Direct3D 9* is only available on Windows hosts.
    * **OpenGL (3.0 Core)** allows for shader effects to be applied to the emulated display, however, it is not compatible with older integrated GPUs.
 
 * **Renderer options:** open a window to configure the *OpenGL (3.0 Core)* renderer. This option will be available if that renderer is selected.
@@ -45,6 +47,9 @@ View
 * **Window scale factor:** scale the emulated display to half (*0.5x*), normal (*1x*), 50% larger (*1.5x*) or double (*2x*) sizes.
 * **Filter method:** select the filtering method (*Nearest* or *Linear*) to be used when scaling the emulated display.
 * **HiDPI scaling:** automatically scale the emulated display to real size if your host system has a HiDPI display. This option can be used alongside *Window scale factor* above.
+
+.. note:: If HiDPI scaling is disabled on a host with a HiDPI display, the emulated display's size may be off by one pixel due to an integer scaling limitation.
+
 * **Fullscreen:** enter full screen mode. Press *Ctrl+Alt+Page Down* to go back to windowed mode. You can also enter full screen mode by pressing *Ctrl+Alt+Page Up*.
 * **Fullscreen stretch mode:** select the picture mode to use when in full screen mode.
 
@@ -65,7 +70,9 @@ View
 Media
 -----
 
-This menu lists all storage drives attached to the emulated machine, and provides the same controls that are accessible by clicking the respective drive's icon on the :doc:`status bar <statusbar>`.
+This menu lists all storage drives and network cards attached to the emulated machine, and provides the same controls that are accessible by clicking the respective device's icon on the :doc:`status bar <statusbar>`.
+
+The **Clear image history** option empties the list of recently-loaded image files or folders on all storage drives.
 
 Tools
 -----
@@ -76,14 +83,17 @@ Tools
 
 .. note:: Integration requires the Discord desktop app, running on x86 or x64 Windows, ``x86_64`` Linux or Intel macOS. Discord does not provide integration support for other operating systems / architectures or the browser app. Additionally, integration will not be available on Windows if the included ``discord_game_sdk.dll`` file is missing from the 86Box directory.
 
-* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory.
+* **Take screenshot:** take a screenshot of the emulated display. Screenshots are saved as .png images in the ``screenshots`` subdirectory found in the emulated machine's directory, which can be opened with the **Open screenshots folder** option below.
 * **Sound gain:** open the :ref:`sound gain control <usage/statusbar:|sound| Sound>`, which is also accessible through the status bar.
 * **Preferences:** open the *Preferences* window, which provides the following options:
 
    * **Language:** select a language for the 86Box user interface.
    * **Icon set:** select an icon theme for the :doc:`status bar <statusbar>` and :doc:`Settings window <../settings/index>`.
+   * **Mouse sensitivity:** adjust the emulated mouse's tracking sensitivity.
+   * **Select media images from program working directory:** if checked, starts any file open/save prompts on the emulated machine's directory. This option is particularly useful for macOS users.
 
 * **MCA devices**: open the *MCA devices* window, which lists the IDs and required `Adapter Definition Files <https://ardent-tool.com/adapters/ADF.html>`_ of all Micro Channel devices installed on the emulated machine. This option will only be available when emulating a Micro Channel Architecture-based machine.
+* **Open screenshots folder**: open the host system's file browser on the directory where screenshots of this emulated machine are saved.
 
 Help
 ----
